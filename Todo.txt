@@ -1,0 +1,18 @@
+Gopu:
+1. Sprak File read and send it to some algorithm and o/p to some DB(mongo) or send to some apache queue from which the other micro service ll read.
+2. ELK create a new project
+
+
+DJ:
+1. Create all Docker File
+
+Malatesh:
+1. Write java program to produce data 
+2. Write kafka consumer which ll create file from i/p
+3. Kafka consumer to write to elastic search
+
+Dinakara:
+1. 
+
+Madhu:
+1. Write API so that all modules can talk to each other
