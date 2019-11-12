@@ -1,0 +1,6 @@
+spring.artemis.mode=native
+spring.artemis.host=192.168.56.106
+spring.artemis.port=61616
+spring.artemis.user=fico
+spring.artemis.password=fico
+jms.queue.destination=demoQueue
