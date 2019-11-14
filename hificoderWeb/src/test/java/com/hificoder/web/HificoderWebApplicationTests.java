@@ -1,4 +1,4 @@
-package com.hificoder.hificoderWeb;
+package com.hificoder.web;
 
 //import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
