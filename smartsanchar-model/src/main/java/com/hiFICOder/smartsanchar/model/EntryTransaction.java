@@ -1,27 +1,48 @@
 package com.hiFICOder.smartsanchar.model;
 
+import java.io.Serializable;
 import java.sql.Date;
 
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+public class EntryTransaction implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
-@EqualsAndHashCode
-@ToString
-@AllArgsConstructor
-public class EntryTransaction {
+	public String getRfid() {
+		return rfid;
+	}
 
-	@Getter
-	@Setter
+	public void setRfid(String rfid) {
+		this.rfid = rfid;
+	}
+
+	public String getBoardingLocId() {
+		return boardingLocId;
+	}
+
+	public void setBoardingLocId(String boardingLocId) {
+		this.boardingLocId = boardingLocId;
+	}
+
+	public Date getTimeEntry() {
+		return timeEntry;
+	}
+
+	public void setTimeEntry(Date timeEntry) {
+		this.timeEntry = timeEntry;
+	}
+
 	private String rfid;
-
-	@Getter
-	@Setter
 	private String boardingLocId;
-
-	@Getter
-	@Setter
 	private Date timeEntry;
+	private String validationStatus;
+
+	public String getValidationStatus() {
+		return validationStatus;
+	}
+
+	public void setValidationStatus(String validationStatus) {
+		this.validationStatus = validationStatus;
+	}
 }
