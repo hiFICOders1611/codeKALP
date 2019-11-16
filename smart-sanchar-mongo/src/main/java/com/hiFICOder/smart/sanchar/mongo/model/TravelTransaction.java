@@ -11,6 +11,8 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 public class TravelTransaction {
 
 	@Id
+	private String id;
+	
 	private String rfid;
 
 	private String serviceProvider;
@@ -101,6 +103,14 @@ public class TravelTransaction {
 
 	public void setBalance(double balance) {
 		this.balance = balance;
-	}	
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
 	
 }
