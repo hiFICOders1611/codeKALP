@@ -27,26 +27,28 @@ public class TravelCardEntryController {
 	String validationApi;
 
 	@RequestMapping(value = "smarCardEntry", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
-	public @ResponseBody String saveSmartCardEntry(@RequestBody EntryTransaction entryTransaction) {
-		// Validate Smart Card Eligibility.
+	public @ResponseBody Boolean saveSmartCardEntry(@RequestBody EntryTransaction entryTransaction) {
+		boolean status = false;
 		String baseUrl = validationApi + entryTransaction.getRfid();
 		DefaultUriBuilderFactory factory = new DefaultUriBuilderFactory(baseUrl);
 		factory.setEncodingMode(EncodingMode.TEMPLATE_AND_VALUES);
-
 		RestTemplate restTemplate = new RestTemplate();
 		restTemplate.setUriTemplateHandler(factory);
 		HttpHeaders headers = new HttpHeaders();
 		headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
 		HttpEntity<String> entity = new HttpEntity<String>("parameters", headers);
 		restTemplate.getForObject(baseUrl, String.class, entity);
-		// Post Message in MQ.
-		String status = restTemplate.getForObject(baseUrl, String.class, entity);
-		if (status.equals("Active")) {
-			// Post Message in MQ.
-			producer.send(entryTransaction);
-			return "Success";
+
+		// Validate Smart Card Eligibility.
+		String validationStatus = restTemplate.getForObject(baseUrl, String.class, entity);
+		entryTransaction.setValidationStatus(validationStatus);
+		if (validationStatus.equals("Approved")) {
+			status = true;
 		}
-		return "Failure";
+
+		// Post Message in MQ.
+		producer.send(entryTransaction);
+		return status;
 	}
 
 }

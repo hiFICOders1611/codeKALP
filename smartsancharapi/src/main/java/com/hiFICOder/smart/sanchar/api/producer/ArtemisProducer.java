@@ -6,6 +6,7 @@ import org.springframework.jms.core.JmsTemplate;
 import org.springframework.stereotype.Component;
 
 import com.hiFICOder.smart.sanchar.api.model.EntryTransaction;
+import com.hiFICOder.smart.sanchar.api.model.ExitTransaction;
 
 @Component
 public class ArtemisProducer {
@@ -18,4 +19,9 @@ public class ArtemisProducer {
 	public void send(EntryTransaction msg) {
 		jmsTemplate.convertAndSend(destinationQueue, msg);
 	}
+
+	public void send(ExitTransaction msg) {
+		jmsTemplate.convertAndSend(destinationQueue, msg);
+	}
+
 }

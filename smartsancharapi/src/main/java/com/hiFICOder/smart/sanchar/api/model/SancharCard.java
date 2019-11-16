@@ -2,26 +2,35 @@ package com.hiFICOder.smart.sanchar.api.model;
 
 import java.sql.Date;
 
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
-@EqualsAndHashCode
-@ToString
-@AllArgsConstructor
 public class SancharCard {
-	@Getter
-	@Setter
 	private String rfid;
 
-	@Getter
-	@Setter
+	public String getRfid() {
+		return rfid;
+	}
+
+	public void setRfid(String rfid) {
+		this.rfid = rfid;
+	}
+
+	public double getBalance() {
+		return balance;
+	}
+
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+
+	public Date getCreationDate() {
+		return creationDate;
+	}
+
+	public void setCreationDate(Date creationDate) {
+		this.creationDate = creationDate;
+	}
+
 	private double balance;
 
-	@Getter
-	@Setter
 	private Date creationDate;
 
 }
