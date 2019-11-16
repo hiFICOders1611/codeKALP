@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.hiFICOder.smart.sanchar.api.SmartSancharApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.908 s - in com.hiFICOder.smart.sanchar.api.SmartSancharApplicationTests
