@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.hiFICOder.smart.sanchar.mongo.dal.SmartCardDAL;
 import com.hiFICOder.smart.sanchar.mongo.dal.SmartCardRepository;
 import com.hiFICOder.smart.sanchar.mongo.model.SmartCard;
 
@@ -22,11 +21,8 @@ public class SmartCardController {
 
 	private final SmartCardRepository smartCardRepository;
 
-	private final SmartCardDAL smartCardDAL;
-
-	public SmartCardController(SmartCardRepository smartCardRepository, SmartCardDAL smartCardDAL) {
+	public SmartCardController(SmartCardRepository smartCardRepository) {
 		this.smartCardRepository = smartCardRepository;
-		this.smartCardDAL = smartCardDAL;
 	}
 
 	@RequestMapping(value = "", method = RequestMethod.POST)

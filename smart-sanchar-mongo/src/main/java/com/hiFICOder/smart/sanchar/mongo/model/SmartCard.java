@@ -1,8 +1,6 @@
 package com.hiFICOder.smart.sanchar.mongo.model;
 
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -11,27 +9,34 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class SmartCard {
 
 	@Id
-	private String smartCardId;
-	private long balance;
-	private Date creationDate = new Date();
+	private String rfid;
 	
-	public String getSmartCardId() {
-		return smartCardId;
+	private long balance;
+	
+	private Date creationDate = new Date();
+
+	public String getRfid() {
+		return rfid;
 	}
-	public void setSmartCardId(String smartCardId) {
-		this.smartCardId = smartCardId;
+
+	public void setRfid(String rfid) {
+		this.rfid = rfid;
 	}
+
 	public long getBalance() {
 		return balance;
 	}
+
 	public void setBalance(long balance) {
 		this.balance = balance;
 	}
+
 	public Date getCreationDate() {
 		return creationDate;
 	}
+
 	public void setCreationDate(Date creationDate) {
 		this.creationDate = creationDate;
 	}
-
+	
 }
