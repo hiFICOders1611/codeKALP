@@ -13,6 +13,8 @@ public class TravelTransaction {
 	@Id
 	private String rfid;
 
+	private String serviceProvider;
+	
 	private String boardingLocId;
 	
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
@@ -22,6 +24,12 @@ public class TravelTransaction {
 
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
 	private Date timeExit;
+	
+	private double fare;
+	
+	private int distance;
+	
+	private double balance;
 
 	public String getRfid() {
 		return rfid;
@@ -61,7 +69,38 @@ public class TravelTransaction {
 
 	public void setTimeExit(Date timeExit) {
 		this.timeExit = timeExit;
+	}
+
+	public double getFare() {
+		return fare;
+	}
+
+	public void setFare(double fare) {
+		this.fare = fare;
+	}
+
+	public int getDistance() {
+		return distance;
+	}
+
+	public String getServiceProvider() {
+		return serviceProvider;
+	}
+
+	public void setServiceProvider(String serviceProvider) {
+		this.serviceProvider = serviceProvider;
+	}
+
+	public void setDistance(int distance) {
+		this.distance = distance;
+	}
+
+	public double getBalance() {
+		return balance;
+	}
+
+	public void setBalance(double balance) {
+		this.balance = balance;
 	}	
-	
 	
 }

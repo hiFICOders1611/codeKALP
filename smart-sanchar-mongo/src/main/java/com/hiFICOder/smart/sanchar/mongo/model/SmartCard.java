@@ -11,6 +11,8 @@ public class SmartCard {
 	@Id
 	private String rfid;
 	
+	private String cardType;
+	
 	private long balance;
 	
 	private Date creationDate = new Date();
@@ -37,6 +39,14 @@ public class SmartCard {
 
 	public void setCreationDate(Date creationDate) {
 		this.creationDate = creationDate;
+	}
+
+	public String getCardType() {
+		return cardType;
+	}
+
+	public void setCardType(String cardType) {
+		this.cardType = cardType;
 	}
 	
 }
