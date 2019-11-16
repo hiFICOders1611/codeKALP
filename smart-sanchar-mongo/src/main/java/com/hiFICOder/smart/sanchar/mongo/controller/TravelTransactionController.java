@@ -4,12 +4,14 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.Example;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.hiFICOder.smart.sanchar.mongo.dal.TravelTransactionDAL;
 import com.hiFICOder.smart.sanchar.mongo.dal.TravelTransactionRepository;
 import com.hiFICOder.smart.sanchar.mongo.model.TravelTransaction;
 
@@ -21,8 +23,11 @@ public class TravelTransactionController {
 
 	private final TravelTransactionRepository travelTransactionRepository;
 	
-	public TravelTransactionController(TravelTransactionRepository travelTransactionRepository) {
+	private final TravelTransactionDAL travelTransactionDAL; 
+	
+	public TravelTransactionController(TravelTransactionRepository travelTransactionRepository, TravelTransactionDAL travelTransactionDAL) {
 		this.travelTransactionRepository = travelTransactionRepository;
+		this.travelTransactionDAL = travelTransactionDAL;
 	}
 
 	@RequestMapping(value = "", method = RequestMethod.POST)
@@ -37,10 +42,10 @@ public class TravelTransactionController {
 		return travelTransactionRepository.findAll();
 	}
 
-	@RequestMapping(value = "/{travelTransactionId}", method = RequestMethod.GET)
-	public TravelTransaction getTravelTransaction(@PathVariable String travelTransactionId) {
-		LOG.info("Getting travelTransaction with ID: {}.", travelTransactionId);
-		return travelTransactionRepository.findOne(travelTransactionId);
+	@RequestMapping(value = "/{rfid}", method = RequestMethod.GET)
+	public List<TravelTransaction> getTravelTransaction(@PathVariable String rfid) {
+		LOG.info("Getting transaction with rfid: {}.", rfid);
+		return travelTransactionDAL.getAllTravelTransactionsById(rfid);
 	}
 
 }
