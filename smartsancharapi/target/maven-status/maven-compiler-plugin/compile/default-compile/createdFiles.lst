@@ -1,1 +1,9 @@
+com\hiFICOder\smart\sanchar\api\services\TransactionQueueManager.class
+com\hiFICOder\smart\sanchar\api\producer\ArtemisProducer.class
+com\hiFICOder\smart\sanchar\api\controller\TravelCardExitController.class
+com\hiFICOder\smart\sanchar\api\controller\TravelCardEntryController.class
+com\hiFICOder\smart\sanchar\api\model\EntryTransaction.class
 com\hiFICOder\smart\sanchar\api\SmartSancharApplication.class
+com\hiFICOder\smart\sanchar\api\model\SancharCard.class
+com\hiFICOder\smart\sanchar\api\model\ExitTransaction.class
+com\hiFICOder\smart\sanchar\api\WebConfiguration.class
