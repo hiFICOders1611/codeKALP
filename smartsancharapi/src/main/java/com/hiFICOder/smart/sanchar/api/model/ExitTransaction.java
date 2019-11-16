@@ -1,26 +1,40 @@
 package com.hiFICOder.smart.sanchar.api.model;
 
+import java.io.Serializable;
 import java.sql.Date;
 
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+public class ExitTransaction implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
-@EqualsAndHashCode
-@ToString
-@AllArgsConstructor
-public class ExitTransaction {
-	@Getter
-	@Setter
+	public String getRfid() {
+		return rfid;
+	}
+
+	public void setRfid(String rfid) {
+		this.rfid = rfid;
+	}
+
+	public Date getTimeEntry() {
+		return timeEntry;
+	}
+
+	public void setTimeEntry(Date timeEntry) {
+		this.timeEntry = timeEntry;
+	}
+
 	private String rfid;
-
-	@Getter
-	@Setter
 	private String deBoardingLocId;
 
-	@Getter
-	@Setter
+	public String getDeBoardingLocId() {
+		return deBoardingLocId;
+	}
+
+	public void setDeBoardingLocId(String deBoardingLocId) {
+		this.deBoardingLocId = deBoardingLocId;
+	}
+
 	private Date timeEntry;
 }
