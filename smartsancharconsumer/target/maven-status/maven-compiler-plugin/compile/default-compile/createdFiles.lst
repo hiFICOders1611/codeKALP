@@ -1,0 +1,5 @@
+com\hiFICOder\smart\sanchar\consumer\jms\TransactionConsumer.class
+com\hiFICOder\smart\sanchar\api\model\SancharCard.class
+com\hiFICOder\smart\sanchar\api\model\ExitTransaction.class
+com\hiFICOder\smart\sanchar\consumer\SmartsancharconsumerApplication.class
+com\hiFICOder\smart\sanchar\api\model\EntryTransaction.class
