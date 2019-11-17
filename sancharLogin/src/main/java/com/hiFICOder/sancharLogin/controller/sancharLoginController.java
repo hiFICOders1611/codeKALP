@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.hiFICOder.sancharLogin.model.ListTravelTransactionUI;
+
 import com.hiFICOder.sancharLogin.model.SancharCard;
 
 @Controller
